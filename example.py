@@ -1,4 +1,4 @@
-from stealthenium import stealth
+from sneaky_selenium import stealth
 
 import math, base64
 from selenium import webdriver

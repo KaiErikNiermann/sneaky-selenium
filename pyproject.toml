@@ -1,0 +1,94 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "sneaky-selenium"
+version = "2.0.0"
+description = "Make Selenium undetectable with stealth evasions and Tor integration."
+authors = [
+    {name = "berstend", email = "github@berstend.com"},
+    {name = "diprajpatra"},
+    {name = "Mark Melnic", email = "markmelnic@gmail.com"},
+    {name = "KaiErikNiermann", email = "kai.niermann@gmail.com"},
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.13"
+keywords = ["selenium", "stealth", "automation", "bot-detection", "web-scraping", "tor", "anonymity", "undetectable"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Environment :: MacOS X",
+    "Environment :: Win32 (MS Windows)",
+    "Environment :: Web Environment",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Acceptance",
+    "Topic :: Software Development :: Testing :: Traffic Generation",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "selenium>=4.23.1",
+]
+
+[project.optional-dependencies]
+tor = [
+    "requests[socks]>=2.31.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/as_user/sneaky-selenium"
+Repository = "https://github.com/as_user/sneaky-selenium"
+
+[tool.poetry]
+packages = [{include = "sneaky_selenium"}]
+include = ["sneaky_selenium/js/*.js"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+flake8 = "^7.1.1"
+tox = "^4.0"
+
+[tool.flake8]
+max-line-length = 150
+exclude = [".tox", "node_modules", "sneaky_selenium/js/node_modules"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py313, py314, flake8
+minversion = 4.0
+skip_missing_interpreters = true
+
+[testenv]
+deps =
+    pytest
+    selenium
+commands =
+    python -m pytest {posargs} -s
+extras = test
+
+[testenv:flake8]
+basepython = python3.14
+deps = flake8
+commands = flake8 .
+skip_install = True
+"""

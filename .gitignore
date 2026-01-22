@@ -88,6 +88,7 @@ celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
+sneaky_selenium/js/node_modules
 
 # Environments
 .env
@@ -115,3 +116,5 @@ venv.bak/
 
 chromedriver
 chromedriver.*
+
+.github/instructions
