@@ -52,12 +52,20 @@ tor = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/as_user/sneaky-selenium"
-Repository = "https://github.com/as_user/sneaky-selenium"
+Homepage = "https://github.com/KaiErikNiermann/sneaky-selenium"
+Repository = "https://github.com/KaiErikNiermann/sneaky-selenium"
 
 [tool.poetry]
 packages = [{include = "sneaky_selenium"}]
 include = ["sneaky_selenium/js/*.js"]
+exclude = [
+    "sneaky_selenium/js/src/**",
+    "sneaky_selenium/js/package.json",
+    "sneaky_selenium/js/pnpm-lock.yaml",
+    "sneaky_selenium/js/tsconfig.json",
+    "sneaky_selenium/js/eslint.config.mjs",
+    "sneaky_selenium/js/node_modules/**",
+]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.2"

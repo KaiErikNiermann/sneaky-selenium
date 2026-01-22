@@ -1,1 +1,8 @@
-include stealthenium/js/*.js
+include sneaky_selenium/js/*.js
+exclude sneaky_selenium/js/src/*
+exclude sneaky_selenium/js/package.json
+exclude sneaky_selenium/js/pnpm-lock.yaml
+exclude sneaky_selenium/js/tsconfig.json
+exclude sneaky_selenium/js/eslint.config.mjs
+prune sneaky_selenium/js/node_modules
+prune sneaky_selenium/js/src
