@@ -70,7 +70,7 @@ exclude = [
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.0.2"
 flake8 = "^7.1.1"
-tox = "^4.46"
+tox = "^4.47"
 
 [tool.flake8]
 max-line-length = 150
