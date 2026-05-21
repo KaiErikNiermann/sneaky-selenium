@@ -48,7 +48,7 @@ dependencies = [
 
 [project.optional-dependencies]
 tor = [
-    "requests[socks]>=2.34.1",
+    "requests[socks]>=2.34.2",
 ]
 
 [project.urls]
