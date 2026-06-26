@@ -43,7 +43,7 @@ classifiers = [
     "Topic :: Utilities",
 ]
 dependencies = [
-    "selenium>=4.44.0",
+    "selenium>=4.45.0",
 ]
 
 [project.optional-dependencies]
@@ -70,7 +70,7 @@ exclude = [
 [tool.poetry.group.dev.dependencies]
 pytest = "^9.1.0"
 flake8 = "^7.1.1"
-tox = "^4.55"
+tox = "^4.56"
 
 [tool.flake8]
 max-line-length = 150
