@@ -43,7 +43,7 @@ classifiers = [
     "Topic :: Utilities",
 ]
 dependencies = [
-    "selenium>=4.45.0",
+    "selenium>=4.46.0",
 ]
 
 [project.optional-dependencies]
